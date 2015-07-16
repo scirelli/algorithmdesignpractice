@@ -1,7 +1,9 @@
 var stuff = (function(){
     function removeCharsInPlace( str, removeThese ){
-        var charSet = new Array(128);
+        var charSet = [];
         
+        str = str.split('');
+
         charSet.forEach(function( value, index, array ){
             array[index]=false;
         });
@@ -11,7 +13,7 @@ var stuff = (function(){
 
         var writePtr = 0;
         for( var i=0,l=str.length; i<l; i++ ){
-            if( charSet[str.charCodeAt(i)] === true ){
+            if( charSet[str[i].charCodeAt(0)] === true ){
                 continue;
             }else{
                 str[writePtr] = str[i];
@@ -21,7 +23,7 @@ var stuff = (function(){
         for( var i=writePtr,l=str.length; i<l; i++ ){
             str[i] = '';
         }
-        return str;
+        return str.join('');
     };
 
     function removeChars( str, removeThese ){
