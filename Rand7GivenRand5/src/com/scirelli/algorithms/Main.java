@@ -6,7 +6,7 @@ import java.util.Collections;
 public class Main {
 	
 	public static int randRange( int min, int max ){
-		double d = (Math.random()*(double)max) + (double)min;
+		double d = (Math.random()*(double)((max-min)+1)) + (double)min;
 		return (int)d;
 	}
 	public static int rand5(){

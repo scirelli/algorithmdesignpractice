@@ -90,7 +90,7 @@ var Heap = function(){
     };
 
     function randRange( min, max ){
-        return ~~(Math.random()*max + min);
+        return ~~(Math.random()*((max-min)+1) + min);
     };
     function randFill( array ){
         for( var i=0,l=array.length; i<l; array[i++] = randRange(0,l) );

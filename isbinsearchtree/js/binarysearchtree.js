@@ -49,7 +49,7 @@ var BinarySearchTree = function(){
     };
 
     function randRange( min, max ){
-        return ~~(Math.random()*max + min);
+        return ~~(Math.random()*((max-min)+1) + min);
     };
     
     var unitTest = {

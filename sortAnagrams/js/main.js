@@ -4,7 +4,7 @@ var aAnas = ["abed","bade","bead","abet","beat","beta","abets","baste","betas","
              "peats","septa","spate","tapes","paws","swap","wasp","pelts","slept","spelt","pertness","presents","serpents","pest","pets","step","piers","pries","spire","pines","snipe","spine","pinto","piton","point","pintos","piston","pitons","points","pores","poser","prose","ropes","spore","potters","protest","spotter","present","repents","serpent","raps","rasp","spar","rashes","shares","shears","rattles","starlet","startle","realist","saltier","retails","recused","reduces","rescued","secured","reigns","resign","signer","singer","reins","resin","rinse","risen","siren","repaint","painter","pertain","repaints","painters","pantries","pertains","rescue","recuse","secure","reset","steer","terse","trees","resort","roster","sorter","restrain","retrains","strainer","terrains","trainers","retests","setter","street","tester","retrain","terrain","trainer","rite","tier","tire","rites","tiers","tires","tries","rosiest","sorties","stories","saint","satin","stain","salve","slave","vales","veals","seated","sedate","teased","serve","sever","veers","verse","sinew","swine","wines","wisens","skate","stake","steak","takes","teaks","skated","staked","tasked","slates","steals","tassel","state","taste","teats","steer","reset","terse","trees","stew","wets","wets","stow","tows","twos","sway","ways","yaws","taster","tetras","treats","thickets","thickest","thickset","weird","wired","wider","whiter","wither","writhe"];
 
 function randRange( min, max ){
-    return ~~(Math.random()*max + min);
+    return ~~(Math.random()*((max-min)+1) + min);
 };
 
 Array.prototype.shuffle = function(){
