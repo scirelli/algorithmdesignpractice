@@ -7,7 +7,7 @@
         var trie = new Trie();
 
         $.ajax({
-            url:'/parseStringWithNoSpaces/words.txt',
+            url:'./words.txt',
             dataType:'json',
             method:'GET'
         }).then(
