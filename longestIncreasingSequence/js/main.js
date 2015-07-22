@@ -1,17 +1,17 @@
 
 var a = [13,14,10,11,12];
 var a = [13,14,13,14,10,11,12,14,15,16,19,1,2,3,4,5,6,7,8,9,10,11,12];
-var a = [13,14,15,16,17,18,19,20,1,2,3,4,5,6,7,8];
+var a = [13,14,15,16,1,17,18,19,20,17,18,19,20,1,2,3,4,5,6,7,8];
 
-function _longestIncreasingSeq( a, i, aLists ){
+function _longestIncreasingSeq( a, i, aLists, j ){
     var itm    = a[i],
         pushed = false;
    
     if( i >= a.length || i < 0 ) return;
-
-    for( var j=0,l=aLists.length,val=0,list; j<l; j++ ){
-        list = aLists[j];
-        val  = list[list.length-1];
+    
+    if( aLists[j] ){
+        var list = aLists[j];
+        var val  = list[list.length-1];
         if( itm > val ){
             list.push(itm);
             pushed=true;
@@ -20,12 +20,13 @@ function _longestIncreasingSeq( a, i, aLists ){
 
     if( !pushed ){
         aLists.push([itm]);
+        j=aLists.length-1;
     }
-    _longestIncreasingSeq(a,i+1,aLists);
+    _longestIncreasingSeq(a,i+1,aLists,j);
 }
 function longestIncreasingSeq( a ){
     var aLists = [];
-        _longestIncreasingSeq( a, 0, aLists ),
+        _longestIncreasingSeq( a, 0, aLists, 0 ),
         bestSolution = null;
 
     for( var i=0,l=aLists.length; i<l; i++ ){
