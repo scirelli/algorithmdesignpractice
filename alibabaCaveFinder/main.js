@@ -24,7 +24,7 @@ function canAliAvoid(aliPos, guesses, caveLength) {
         if(aliPos < 0) aliPos = 1;
         if(aliPos >= caveLength) aliPos = caveLength - 2;
         if(aliPos === guesses[guessIndex]) return true;
-        return canAliAvoid(aliPos-1, guessIndex+1, guesses, caveLength) && canAliAvoid(aliPos+1, guessIndex+1, guesses, caveLength);
+        return findAll(aliPos-1, guessIndex+1, guesses, caveLength) && findAll(aliPos+1, guessIndex+1, guesses, caveLength);
     }
 }
 
